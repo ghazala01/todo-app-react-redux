@@ -14,8 +14,6 @@ In the project directory, you can run:
 
 ![alt text](image.png)
 
-## Video
-<video controls src="AwesomeScreenshot-5_13_2024,11_20_09PM-1.mp4" title="Title"></video>
 
 
 
