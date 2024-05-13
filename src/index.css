@@ -15,7 +15,7 @@
   color: #D98326;
 }
 
-.addTodo-form{
+.addTodo-form, .todoList{
   background-color: #F1ECE6;
 }
 
@@ -23,9 +23,7 @@
   color: #858181;
 }
 
-.todoList{
-  background-color: #F1ECE6;
-}
+
 
 
 

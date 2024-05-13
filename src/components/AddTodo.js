@@ -4,14 +4,12 @@ import { addTodo } from '../redux/todoApp/actions';
 
 export const AddTodo = () => {
 
-  // dispatch function to dispatch an action
   const dispatch = useDispatch();
 
-  // todo value state for normal add todo form
   const [todoTitleValue, setTodoTitleValue] = useState('');
   const [todoDescriptionValue, setTodoDescriptionValue] = useState('');
 
-  // normal add todo submit
+  // add todo submit
   const handleSubmit=(e)=>{
       e.preventDefault();
       let date = new Date();

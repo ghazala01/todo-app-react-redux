@@ -4,7 +4,7 @@ import { handleCheckbox, removeTodo } from '../redux/todoApp/actions';
 import { Icon } from 'react-icons-kit';
 import { trash } from 'react-icons-kit/feather/trash';
 
-export const ListTodos = ({ handleEditClick, editFormVisibility }) => {
+export const ListTodos = () => {
   const dispatch = useDispatch();
 
   // getting todos from the store
