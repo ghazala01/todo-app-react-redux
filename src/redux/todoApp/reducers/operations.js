@@ -1,5 +1,5 @@
 /* eslint-disable array-callback-return */
-import { ADD_TODO, UPDATE_CHECKBOX } from "../actions";
+import { ADD_TODO, UPDATE_CHECKBOX, REMOVE_TODO } from "../actions";
 
 const initialState=[
     {id: 1, todo: 'Sample Task 1', description: 'This is description of sample task one', completed: false},
@@ -9,12 +9,12 @@ const initialState=[
 
 export const operationsReducer = (state = initialState, action) => {
     switch (action.type) {
+        // Add New Todo
         case ADD_TODO:
-            // Add the new todo to the beginning of the array
             return [action.payload, ...state];
-
+        
+        // Update Status of Completed Items
         case UPDATE_CHECKBOX:
-            // Map through the todos and update the completed status
             const updatedTodos = state.map((item) => {
                 if (item.id === action.payload) {
                     return {
@@ -26,12 +26,15 @@ export const operationsReducer = (state = initialState, action) => {
                 }
             });
 
-            // Separate completed and incomplete todos
             const completedTodos = updatedTodos.filter((item) => item.completed);
             const incompleteTodos = updatedTodos.filter((item) => !item.completed);
 
-            // Combine incomplete and completed todos, placing completed todos at the bottom
             return [...incompleteTodos, ...completedTodos];
+        
+        // Delete Todo
+        case REMOVE_TODO:
+            const filteredTodos = state.filter((todo)=>todo.id!==action.payload);
+            return filteredTodos;
 
         default:
             return state;
